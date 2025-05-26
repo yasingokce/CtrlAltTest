@@ -1,0 +1,21 @@
+# node_modules klasörü
+node_modules/
+
+# test raporları
+allure-results/
+allure-report/
+
+# Playwright çıktıları
+test-results/
+playwright-report/
+# Notlarım
+notes.txt
+
+# log dosyaları
+*.log
+
+# işletim sistemi dosyaları
+.DS_Store
+
+# VS Code ayarları
+.vscode/
