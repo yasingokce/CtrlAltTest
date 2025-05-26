@@ -38,5 +38,11 @@ npm run clean:allure": "rimraf allure-results"
 npm run clean": "rimraf node_modules package-lock.json"
 
 
-yapıdan bahset???
-refactor yap....
+# alliasHelper.js
+Alias kullanımı, tekrar eden kodları kısaltarak test senaryolarının okunabilirliğini ve bakımını kolaylaştırdı.
+
+# util.js
+util.js dosyasında tanımlanan waitAndGet ve waitAndClick fonksiyonları ile birlikte alias map yapısının kullanılması, test adımlarında sık tekrar eden element işlemlerini soyutlayarak kod tekrarını azaltmış, aynı zamanda test senaryolarının okunabilirliğini ve sürdürülebilirliğini önemli ölçüde artırmıştır.
+
+# hooks.js
+Before ve After blokları kullanılarak, her senaryo öncesinde tarayıcı ve sayfa nesneleri oluşturulmakta, senaryo sonrasında ise tarayıcı kapanarak kaynaklar serbest bırakılmaktadır. Böylece her test izole bir ortamda çalışır ve testler arası bağımlılık olabildiğince engellenmiştir.
