@@ -11,7 +11,7 @@ let browserType = process.env.BROWSER || "chromium"; // default yoksa default ch
 
 Before(async function () {
   const browsers = { chromium, firefox, webkit };
-  this.browser = await browsers[browserType].launch({ headless: false });
+  this.browser = await browsers[browserType].launch({ headless: true });
   this.context = await this.browser.newContext();
   this.page = await this.context.newPage();
 });
