@@ -48,8 +48,6 @@ class SearchPage extends BasePage {
       expect(productCountFromText).toBeGreaterThanOrEqual(listedProductCount);
       expect(listedProductCount).toBeGreaterThanOrEqual(keywordMatchCount);
     } else if ("invalid" === validOrNot) {
-      console.log("listed product count : " +listedProductCount);
-      console.log("keywordMatchCount count : " +keywordMatchCount);
       expect(listedProductCount).toBeGreaterThan(0);
       expect(keywordMatchCount).toBe(0);
     }
