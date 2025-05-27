@@ -48,6 +48,8 @@ class SearchPage extends BasePage {
       expect(productCountFromText).toBeGreaterThanOrEqual(listedProductCount);
       expect(listedProductCount).toBeGreaterThanOrEqual(keywordMatchCount);
     } else if ("invalid" === validOrNot) {
+      console.log("listed product count : " +listedProductCount);
+      console.log("keywordMatchCount count : " +keywordMatchCount);
       expect(listedProductCount).toBeGreaterThan(0);
       expect(keywordMatchCount).toBe(0);
     }
@@ -60,14 +62,19 @@ class SearchPage extends BasePage {
   }
 
   async countKeywordMatchesOnPage(keyword, locator) {
-    const allProducts = await this.page.locator(locator).allTextContents();
+  const allProducts = await this.page.locator(locator).allTextContents();
 
-    const matches = allProducts.filter((text) =>
-      text.toLowerCase().includes(keyword.toLowerCase())
-    );
+  if (!keyword || keyword.trim() === "") return 0;
 
-    return matches.length;
-  }
+  const normalizedKeyword = keyword.toLowerCase().trim();
+
+  const matches = allProducts.filter((text) => {
+    if (!text) return false;
+    return text.toLowerCase().includes(normalizedKeyword);
+  });
+
+  return matches.length;
+}
 }
 
 module.exports = SearchPage;
