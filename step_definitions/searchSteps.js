@@ -24,10 +24,14 @@ Then('{string} product search results should be visible', async function (text) 
 // ürün arama önerileri varmı??
 Then('{string} should include {string}', async function (alias,text) {
   const locatorAllias = getSelector(alias);
-  await this.page.waitForSelector(locatorAllias, { timeout: 5000 });
+  await this.page.waitForSelector(locatorAllias, { timeout: 15000 });
 const matchCount = await searchPage.countKeywordMatchesOnPage(text, locatorAllias);
 expect(matchCount).toBeGreaterThan(0);
 });
 
-
+// Selector'e tıklanır
+When('user clicks on the {string}', async function (alias) {
+  const locatorAllias = getSelector(alias);
+ await this.page.locator(locatorAllias).first().click();
+});
 

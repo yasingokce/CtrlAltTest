@@ -10,7 +10,7 @@ Feature: Add products to cart
     And user clicks on the selector "first item"
     Then user clicks on the selector "add to cart"
     And the text "Ürün Sepete Eklendi!" should be visible on the page
- 
+    
   @severity:minor
   @cartBefore
   Scenario: User views cart after adding a product

@@ -12,7 +12,7 @@ const aliasMap = {
   "loggin/create account button enabled": '.btn-link-second-menu.d-block.ng-star-inserted',
   "search input": '#txtSearchBox',
   "auto-suggestions": 'li.ng-star-inserted span.content',
-  "first auto-suggestions": '.suggestions ul:nth-of-type(1) li.ng-star-inserted a',
+  "first auto-suggestions": '.suggestions > ul:nth-of-type(1) > li > a',
   "last search list": 'div.last-search-list li a',
   "homepage":'https://www.e-bebek.com/',
   "first item":'eb-product-list-item >> nth=0',

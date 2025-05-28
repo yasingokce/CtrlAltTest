@@ -10,14 +10,14 @@ Feature: Product Search
     Then the text "bebek arabası" should be visible on the page
     And the text "adet ürün bulundu" should be visible on the page
     Then 'valid' product search results should be visible
-
+  
   @severity:minor
   Scenario: Search for a non-existent product
     When search for "fkgdlkgfdgmsşldfasşil" product
     Then the text "fkgdlkgfdgmsşldfasşil" should be visible on the page
     And the text "adet ürün bulundu" should be visible on the page
     Then 'invalid' product search results should be visible
-
+  
   @severity:normal
   Scenario: Search with special characters
     When search for "()%+^&%)%^+%+^=)?" product
@@ -27,9 +27,9 @@ Feature: Product Search
 
   @severity:minor
   Scenario: Use auto-suggestion in search
-    When user types "bebe" into the "search input" field
+    When user types "bebe" into the "search input" textbox
     Then "auto-suggestions" should include "bebek"
-    When user clicks on the selector "first auto-suggestions"
+    When user clicks on the "first auto-suggestions"
     Then 'valid' product search results should be visible
 
   @severity:normal

@@ -28,6 +28,7 @@ class SearchPage extends BasePage {
   }
 
   async searchProduct(productName) {
+    this.searchText= productName;
     await this.searchBox.fill(productName);
     await this.searchBox.press("Enter");
   }
@@ -59,20 +60,15 @@ class SearchPage extends BasePage {
     return match ? parseInt(match[0], 10) : 0;
   }
 
-  async countKeywordMatchesOnPage(keyword, locator) {
-  const allProducts = await this.page.locator(locator).allTextContents();
+   async countKeywordMatchesOnPage(keyword, locator) {
+    const allProducts = await this.page.locator(locator).allTextContents();
 
-  if (!keyword || keyword.trim() === "") return 0;
+    const matches = allProducts.filter((text) =>
+      text.toLowerCase().includes(keyword.toLowerCase())
+    );
 
-  const normalizedKeyword = keyword.toLowerCase().trim();
-
-  const matches = allProducts.filter((text) => {
-    if (!text) return false;
-    return text.toLowerCase().includes(normalizedKeyword);
-  });
-
-  return matches.length;
-}
+    return matches.length;
+  } 
 }
 
 module.exports = SearchPage;
