@@ -30,8 +30,8 @@ npm run test:allure": "npx cucumber-js --format ./tests/support/reporter/AllureR
 
 # Allure raporu oluştur
 
-npm run allure:generate": "npx allure generate ./test-results/reports/allure-results --clean -o allure-report"
-npm run allure:open": "npx allure open allure-report"
+npm run allure:generate": "npx allure generate ./test-results/reports/allure-results --clean -o allure-report"    
+npm run allure:open": "npx allure open allure-report"     
 npm run clean:allure": "rimraf allure-results"
 
 # Clean node modules and package-lock.json
