@@ -19,7 +19,7 @@ npm install --save-dev \
  playwright@^1.52.0 \
  rimraf@^6.0.1
 
-# Testi 
+# Test 
 
 npm run test: "cucumber-js"
 npm run test:chrome": "cross-env BROWSER=chromium npm run test"
