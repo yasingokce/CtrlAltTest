@@ -21,10 +21,10 @@ npm install --save-dev \
 
 # Test 
 
-npm run test: "cucumber-js"
-npm run test:chrome": "cross-env BROWSER=chromium npm run test"
-npm run test:firefox": "cross-env BROWSER=firefox npm run test"
-npm run test:webkit": "cross-env BROWSER=webkit npm run test"
+npm run test: "cucumber-js"     
+npm run test:chrome": "cross-env BROWSER=chromium npm run test"       
+npm run test:firefox": "cross-env BROWSER=firefox npm run test"      
+npm run test:webkit": "cross-env BROWSER=webkit npm run test"     
 npm run test:allure": "npx cucumber-js --format ./tests/support/reporter/AllureReporter.js -p runner"
 
 
